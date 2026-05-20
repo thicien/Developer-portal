@@ -17,6 +17,17 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
+  
+  const links = [
+    { name: 'home', href: '#home' },
+    { name: 'about', href: '#About' },
+    { name: 'skills', href: '#Skills' },
+    { name: 'projects', href: '#Projects' },
+    { name: 'experience', href: '#Exprience' },
+    { name: 'timeline', href: '#Timeline' },
+    { name: 'testimonials', href: '#Testimonials' },
+    { name: 'contact', href: '#Contact' }
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +59,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
         <a href="#home" className="flex items-center gap-2 group">
           <div className="p-2 rounded-xl bg-gradient-to-tr from-[#3B82F6] to-[#8B5CF6] text-white">
             <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
@@ -58,7 +68,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
           </span>
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           <ul className="flex items-center gap-6">
             {navLinks.map((link) => (
@@ -82,7 +91,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
           <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         </div>
 
-        {/* Mobile Nav Toggle */}
         <div className="flex lg:hidden items-center gap-4">
           <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
           <button
@@ -95,7 +103,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
         </div>
       </div>
 
-      {/* Mobile Slide Menu */}
       {isOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-[#0B0F19]/95 backdrop-blur-lg border-b border-gray-800 py-6 px-6 shadow-2xl animate-fade-in">
           <ul className="flex flex-col gap-4 mb-4">
