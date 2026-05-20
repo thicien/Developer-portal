@@ -13,7 +13,7 @@ export default function Footer() {
             <Code2 className="w-4 h-4" />
           </div>
           <span className="font-grotesk font-bold text-lg text-white">
-            Neo<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">.Dev</span>
+            Thicien<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">.Dev</span>
           </span>
         </div>
 

@@ -1,14 +1,14 @@
 export const personalInfo = {
-  name: "Neo V. Sterling",
+  name: "MUGISHA Thicien",
   title: "Principal Full Stack Architect",
   subtitle: "Building the Next Generation of Hyper-Scale Web Experiences & Interactive Graphics.",
   bio: "A highly passionate software engineer specializing in crafting scalable backend services, high-performance frontend architectures, and immersive interactive graphics. Driven by efficiency, modern UI/UX design patterns, and clean code principles.",
   cvUrl: "#", // Mock CV URL or downloadable
-  email: "neo.sterling@dev.io",
+  email: "thicien@dev.io",
   location: "San Francisco, CA / Remote",
-  github: "https://github.com/neosterling",
-  linkedin: "https://linkedin.com/in/neosterling",
-  twitter: "https://twitter.com/neosterling",
+  github: "https://github.com/thicien",
+  linkedin: "https://linkedin.com/in/thicien",
+  twitter: "https://twitter.com/thicien",
 };
 
 export const skillsData = [
@@ -61,7 +61,7 @@ export const projectsData = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     tags: ["React", "TypeScript", "Three.js", "Tailwind CSS", "WebSockets"],
     liveUrl: "https://quantum-flow.vercel.app",
-    githubUrl: "https://github.com/neosterling/quantum-flow",
+    githubUrl: "https://github.com/thicien/quantum-flow",
     features: [
       "Dynamic canvas-based grid rendering for high-frequency charts",
       "Real-time state synchronization using custom React Context + WebSockets",
@@ -80,7 +80,7 @@ export const projectsData = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     tags: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "Stripe API"],
     liveUrl: "https://nova-shop.vercel.app",
-    githubUrl: "https://github.com/neosterling/nova-ecom",
+    githubUrl: "https://github.com/thicien/nova-ecom",
     features: [
       "Stripe integration with custom payment element and pre-authorization checkout",
       "Advanced fuzzy search powered by MongoDB Atlas Search and multi-level facet filtering",
@@ -99,7 +99,7 @@ export const projectsData = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
     tags: ["FastAPI", "Python", "React", "PostGIS", "Tailwind CSS"],
     liveUrl: "https://hologrid.vercel.app",
-    githubUrl: "https://github.com/neosterling/hologrid",
+    githubUrl: "https://github.com/thicien/hologrid",
     features: [
       "Advanced R-Tree spatial indexing with interactive canvas visualization",
       "Highly responsive Python API capable of processing geo queries in less than 5ms",
@@ -172,19 +172,19 @@ export const testimonialsData = [
   {
     name: "Dr. Sarah Jenkins",
     role: "VP of Engineering, Nexus Labs",
-    feedback: "Neo possesses a rare combination of pure technical mastery and strong user empathy. He architected our telemetry dashboard, turning a slow legacy application into a lightning-fast experience that completely wowed our clients.",
+    feedback: "Thicien possesses a rare combination of pure technical mastery and strong user empathy. He architected our telemetry dashboard, turning a slow legacy application into a lightning-fast experience that completely wowed our clients.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
   },
   {
     name: "Alex Rivera",
     role: "Founder, NovaCommerce",
-    feedback: "Working with Neo to build our headless commerce store was an absolute pleasure. He solved our critical race-condition issue with Redis within hours and designed a dynamic, beautiful UI that improved our conversion rate by 34%.",
+    feedback: "Working with Thicien to build our headless commerce store was an absolute pleasure. He solved our critical race-condition issue with Redis within hours and designed a dynamic, beautiful UI that improved our conversion rate by 34%.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   },
   {
     name: "Eléna Rostova",
     role: "Lead UI Developer, CreativeFlow",
-    feedback: "Neo is the most design-focused full-stack developer I've worked with. He writes clean, predictable backend APIs while maintaining a sharp eye for layout, micro-interactions, and premium UI animations. Highly recommended!",
+    feedback: "Thicien is the most design-focused full-stack developer I've worked with. He writes clean, predictable backend APIs while maintaining a sharp eye for layout, micro-interactions, and premium UI animations. Highly recommended!",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
   }
 ];

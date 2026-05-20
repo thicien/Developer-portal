@@ -4,7 +4,7 @@ import { personalInfo, skillsData, projectsData } from '../data/portfolioData';
 
 export default function Terminal() {
   const [history, setHistory] = useState([
-    { text: 'Initializing NeoTerminal v2.1.0...', type: 'info' },
+    { text: 'Initializing ThicienTerminal v2.1.0...', type: 'info' },
     { text: 'Ready! Type "help" to see all available commands.', type: 'success' },
   ]);
   const [input, setInput] = useState('');
@@ -23,7 +23,7 @@ export default function Terminal() {
 
   const executeCommand = (cmd) => {
     const trimmed = cmd.trim().toLowerCase();
-    const newHistory = [...history, { text: `neo-dev@portfolio:~$ ${cmd}`, type: 'input' }];
+    const newHistory = [...history, { text: `thicien-dev@portfolio:~$ ${cmd}`, type: 'input' }];
 
     if (trimmed === '') {
       setHistory(newHistory);
@@ -77,12 +77,12 @@ export default function Terminal() {
         response = [
           { text: 'Injecting secure virtual mainframe...', type: 'warning' },
           { text: 'SYS_LOAD: [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] 100%', type: 'success' },
-          { text: 'Neo V. Sterling is watching you. Welcome to the Matrix.', type: 'info' },
+          { text: 'MUGISHA Thicien is watching you. Welcome to the Matrix.', type: 'info' },
         ];
         break;
       default:
         response = [
-          { text: `neo-sh: command not found: "${trimmed}". Type "help" for instructions.`, type: 'error' },
+          { text: `thicien-sh: command not found: "${trimmed}". Type "help" for instructions.`, type: 'error' },
         ];
     }
 
@@ -109,7 +109,7 @@ export default function Terminal() {
       <div className="bg-[#111827] border-b border-gray-800 px-6 py-4 flex justify-between items-center select-none">
         <div className="flex items-center gap-2">
           <TermIcon className="w-5 h-5 text-[#8B5CF6]" />
-          <span className="text-gray-300 font-semibold">neo-terminal.sh</span>
+          <span className="text-gray-300 font-semibold">thicien-terminal.sh</span>
         </div>
         <div className="flex gap-2">
           <div className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -144,8 +144,8 @@ export default function Terminal() {
       </div>
 
       {/* Input area */}
-      <div className="bg-[#090D16] border-t border-gray-850 px-6 py-4 flex items-center gap-2">
-        <span className="text-[#8B5CF6] font-bold">neo-dev@portfolio:~$</span>
+      <div className="bg-[#090D16] border-t border-gray-855 px-6 py-4 flex items-center gap-2">
+        <span className="text-[#8B5CF6] font-bold">thicien-dev@portfolio:~$</span>
         <input
           ref={inputRef}
           type="text"

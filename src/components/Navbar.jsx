@@ -22,7 +22,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Active Section Highlighting
       const scrollPosition = window.scrollY + 150;
       for (const link of navLinks) {
         const section = document.querySelector(link.href);
@@ -55,7 +54,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
           </div>
           <span className="font-grotesk font-bold text-xl tracking-tight text-white">
-            Neo<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">.Dev</span>
+            Thicien<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6]">.Dev</span>
           </span>
         </a>
 

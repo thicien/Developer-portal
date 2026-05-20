@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
+  const [position, setPosition] = useState({ x: -100, y: -100 });
   const [hidden, setHidden] = useState(true);
   const [hovered, setHovered] = useState(false);
-
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
-
-  const springConfig = { damping: 40, stiffness: 400, mass: 0.4 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
     // Disable custom cursor on mobile/touch screens
@@ -18,16 +11,15 @@ export default function CustomCursor() {
       return;
     }
 
-    const moveCursor = (e) => {
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
-      if (hidden) setHidden(false);
+    const handleMouseMove = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+      setHidden(false);
     };
 
     const handleMouseLeave = () => setHidden(true);
     const handleMouseEnter = () => setHidden(false);
 
-    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseleave', handleMouseLeave);
     document.addEventListener('mouseenter', handleMouseEnter);
 
@@ -49,44 +41,43 @@ export default function CustomCursor() {
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
       observer.disconnect();
     };
-  }, [cursorX, cursorY, hidden]);
-
-  if (hidden) return null;
+  }, []);
 
   return (
-    <>
-      {/* Outer Glow */}
-      <motion.div
+    <div
+      style={{
+        opacity: hidden ? 0 : 1,
+        transition: 'opacity 0.3s ease',
+      }}
+      className="pointer-events-none fixed inset-0 z-[9999]"
+    >
+      {/* Outer Glow Ring */}
+      <div
         style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
+          transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%) scale(${hovered ? 1.5 : 1})`,
+          transition: 'transform 0.12s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, background-color 0.3s',
         }}
-        className={`fixed top-0 left-0 w-8 h-8 rounded-full border-2 pointer-events-none z-50 transition-colors duration-300 ${
+        className={`fixed top-0 left-0 w-8 h-8 rounded-full border-2 pointer-events-none ${
           hovered 
-            ? 'border-[#06B6D4] bg-[#06B6D4]/10 scale-150' 
+            ? 'border-[#06B6D4] bg-[#06B6D4]/10' 
             : 'border-[#8B5CF6] bg-transparent'
         }`}
-        animate={{
-          scale: hovered ? 1.5 : 1,
-        }}
       />
       {/* Inner Dot */}
-      <motion.div
+      <div
         style={{
-          x: useSpring(useMotionValue(0), springConfig),
-          y: useSpring(useMotionValue(0), springConfig),
-          left: cursorX,
-          top: cursorY,
+          transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,
+          transition: 'transform 0.02s linear, background-color 0.3s',
         }}
-        className={`fixed w-2 h-2 rounded-full pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 mt-[12px] ml-[12px] transition-colors duration-300 ${
+        className={`fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none ${
           hovered ? 'bg-[#06B6D4]' : 'bg-[#3B82F6]'
         }`}
       />
-    </>
+    </div>
   );
 }
