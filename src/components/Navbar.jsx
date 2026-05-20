@@ -17,17 +17,6 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
-  
-  const links = [
-    { name: 'home', href: '#home' },
-    { name: 'about', href: '#About' },
-    { name: 'skills', href: '#Skills' },
-    { name: 'projects', href: '#Projects' },
-    { name: 'experience', href: '#Exprience' },
-    { name: 'timeline', href: '#Timeline' },
-    { name: 'testimonials', href: '#Testimonials' },
-    { name: 'contact', href: '#Contact' }
-  ]
 
   useEffect(() => {
     const handleScroll = () => {
