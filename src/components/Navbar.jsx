@@ -17,6 +17,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];
+  
 
   useEffect(() => {
     const handleScroll = () => {
